@@ -121,7 +121,7 @@ async def on_message(message):
         if player == 'moryn':
             msg = '"Hell of a fiery beard! Enough to even rival mine. A holy type though, great. Just great."'
             
-        msg = '"RIP, big oof."'
+        msg = '<:payrespects:502292405152645122>'
         await client.send_message(message.channel, msg)
 
     if message.content.lower().startswith('hey sam can i'):

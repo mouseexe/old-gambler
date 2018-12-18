@@ -115,7 +115,7 @@ async def on_message(message):
         if player == 'wil' or player == 'wilavor':
             msg = '"Talented half-elf. Surprised he survived this long but can\'t say I\'m upset about it."'
         if player == 'agamemnon':
-            msg = '"Bit of an explosive exit, no? Wonder where they went. I\'ll miss their dogs."'
+            msg = '"Bit of an explosive exit, no? Wonder where they went. At least I got their dogs. Who\'s a good girl? You are!"'
         if player == 'namira':
             msg = '"An intimidating lass for sure. Hope she doesn\'t think I\'m evil, doubt I could stand up against her in a fight."'
         if player == 'moryn':

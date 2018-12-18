@@ -28,10 +28,6 @@ async def on_message(message):
     if 'bad bot' in message.content.lower():
         msg = '"Fuck you."'
         await client.send_message(message.channel, msg)
-        
-    if 'dog' in message.content.lower():
-        msg = '"C R O N C H"'
-        await client.send_message(message.channel, msg)
 
     if message.content.startswith(rollCmd) or message.content.startswith(altRollCmd):
         cleanmsg = cleanMessage(message, rollCmd)

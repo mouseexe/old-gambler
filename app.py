@@ -136,6 +136,8 @@ async def on_message(message):
             msg = '"The \'others\' huh? Who the flying fuck are the others? Am I an other?"'
         if player == 'antaeus':
             msg = '"I... don\'t think he can read. Can he read?"'
+        if player == 'dendro':
+            msg = '"Heh. Milk drinker."'
             
         #msg = '<:payrespects:502292405152645122>'
         await client.send_message(message.channel, msg)

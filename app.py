@@ -121,7 +121,7 @@ async def on_message(message):
         if player == 'takrend':
             msg = '"So many of you "brave" adventurers out here and this guy is the only one who can drive a boat? Weak."'
         if player == 'wil' or player == 'wilavor':
-            msg = '"Talented half-elf. Surprised he survived this long but can\'t say I\'m upset about it."'
+            msg = '"Kid needs a stage name. Wilavor the Bold. No, that\'s boring. Wilavor the Magnificent! No, that\'s too cocky. Hm..."'
         if player == 'agamemnon':
             msg = '"Bit of an explosive exit, no? Wonder where they went. At least I got their dogs. Who\'s a good girl? You are!"'
         if player == 'namira':
@@ -138,6 +138,8 @@ async def on_message(message):
             msg = '"I... don\'t think he can read. Can he read?"'
         if player == 'dendro':
             msg = '"Heh. Milk drinker."'
+        if player == 'isla' or player == 'xarthisius' or player == 'peck' or player == 'rocky' or player == 'dexter' or player == 'sapphire' or player == 'sarah finley' or player == 'mieka' or player == 'karl' or player == 'artax' or player == 'granny' or player == 'keldrick' or player == 'yai' or player == 'vizigo' or player == 'tuli' or player == 'valkea':
+            msg = '"Nice to see \'em around the taproom sometimes. Cheers me up, ya know? Makes me less lonely."'
             
         #msg = '<:payrespects:502292405152645122>'
         await client.send_message(message.channel, msg)

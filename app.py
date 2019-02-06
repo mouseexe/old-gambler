@@ -16,7 +16,15 @@ async def on_message(message):
     # we do not want the bot to reply to itself
     if message.author == client.user:
         return
+    
+    if 'RIP' in message.content:
+        msg = '<:payrespects:502292405152645122>'
+        await client.send_message(message.channel, msg)
 
+    if '@Dungeon Master' in message.content:
+        msg = '"You fool! You spoke the forbidden words! His wrath falls upon us!"'
+        await client.send_message(message.channel, msg)
+    
     if message.content.startswith('!throk'):
         msg = '<:throkflex:486598697228959760>'
         await client.send_message(message.channel, msg)
@@ -85,7 +93,7 @@ async def on_message(message):
         player = cleanMessage(message, describeCmd)
         msg = '"Friend, I got rightly no idea who you\'re talking about. Maybe check yer spelling?"'
         if player == 'rayne':
-            msg = '"Heard they almost died. Maybe that would get them to stop talking."'
+            msg = '"Are they going on missions now? Interesting choice. Didn\'t expect that from them."'
         if player == 'wivaun':
             msg = '"Do you know where he gets his supply? Maybe hit me up, eh? My last dealer died on an adventure six months ago."'
         if player == 'khyrim':
@@ -99,13 +107,13 @@ async def on_message(message):
         if player == 'throk':
             msg = '"Throk and Peck, hell of duo. Who doesn\'t love Throk?"'
         if player == 'fenric':
-            msg = '"Kinda moody lately. Is it because a bunch of his friends died? Lame."'
+            msg = '"I heard he got killed by a swarm of squirrels in the night."'
         if player == 'fidelius':
-            msg = '"This little bitch cheats at cards."'
+            msg = '"This little bitch cheated at cards."'
         if player == 'vondal':
             msg = '"Who? Oh, is he dead now? Didn\'t notice."'
         if player == 'avos':
-            msg = '"Heard he helped kill a dragon. Nice turn around from the time a dragon nearly killed him."'
+            msg = '"Surprised he lived that long to be honest. Horny little bugger, wasn\'t he?"'
         if player == 'theodwin':
             msg = '"I literally only care about this guy because of Rocky."'
         if player == 'evin':
@@ -117,9 +125,17 @@ async def on_message(message):
         if player == 'agamemnon':
             msg = '"Bit of an explosive exit, no? Wonder where they went. At least I got their dogs. Who\'s a good girl? You are!"'
         if player == 'namira':
-            msg = '"An intimidating lass for sure. Hope she doesn\'t think I\'m evil, doubt I could stand up against her in a fight."'
+            msg = '"She had a good heart. Still curious about those burns on her eyes, but I guess we\'ll never know. Wonder what Rayne wrote on her card..."'
         if player == 'moryn':
             msg = '"Hell of a fiery beard! Enough to even rival mine. A holy type though, great. Just great."'
+        if player == 'cassandra':
+            msg = '"Great, Empire breathing down my back again. Just what I needed."'
+        if player == 'crimson':
+            msg = '"Picking a fight on her first night was a fascinating choice. Smart money is on her over the elf."'
+        if player == 'aban':
+            msg = '"The \'others\' huh? Who the flying fuck are the others? Am I an other?"'
+        if player == 'antaeus':
+            msg = '"I... don\'t think he can read. Can he read?"'
             
         #msg = '<:payrespects:502292405152645122>'
         await client.send_message(message.channel, msg)

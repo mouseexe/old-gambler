@@ -16,13 +16,19 @@ async def on_message(message):
     # we do not want the bot to reply to itself
     if message.author == client.user:
         return
-    
-    if 'RIP' in message.content:
-        msg = '<:payrespects:502292405152645122>'
-        await client.send_message(message.channel, msg)
 
     if '@Dungeon Master' in message.content:
         msg = '"You fool! You spoke the forbidden words! His wrath falls upon us!"'
+        await client.send_message(message.channel, msg)
+        
+    if message.content.lower().startswith('hey sam can i'):
+        msg = '"No."'
+        if random.randint(1, 100) == 1:
+            msg = '"Eh, sure. Why not?"'
+        await client.send_message(message.channel, msg)
+    
+    if 'RIP' in message.content:
+        msg = '<:payrespects:502292405152645122>'
         await client.send_message(message.channel, msg)
     
     if message.content.startswith('!throk'):
@@ -146,12 +152,6 @@ async def on_message(message):
             msg = '"Nice to see \'em around the taproom sometimes. Cheers me up, ya know? Makes me less lonely."'
             
         #msg = '<:payrespects:502292405152645122>'
-        await client.send_message(message.channel, msg)
-
-    if message.content.lower().startswith('hey sam can i'):
-        msg = '"No."'
-        if random.randint(1, 100) == 1:
-            msg = '"Eh, sure. Why not?"'
         await client.send_message(message.channel, msg)
 
     if message.content.startswith('!snore'):

@@ -28,6 +28,10 @@ async def on_message(message):
     if message.content.startswith('!throk'):
         msg = '<:throkflex:486598697228959760>'
         await client.send_message(message.channel, msg)
+        
+    if message.content.startswith('!inspiration'):
+        msg = '<:milano:542939947544346644>'
+        await client.send_message(message.channel, msg)
     
     if 'good bot' in message.content.lower():
         msg = '"Thanks!"'

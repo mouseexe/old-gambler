@@ -190,15 +190,15 @@ def getUnexpected():
     if r == 0:
         return '"Friend, I got rightly no idea who you\'re talking about. Maybe check yer spelling?"'
     elif r == 1:
-        '"Who in the nine hells is that? Maybe yer spelling is off, pal."'
+        return '"Who in the nine hells is that? Maybe yer spelling is off, pal."'
     elif r == 2:
-        '"Fella, I\'m not familiar with that individual. Did ya spell the name wrong?"'
+        return '"Fella, I\'m not familiar with that individual. Did ya spell the name wrong?"'
     elif r == 3:
-        '"Uh.. who?"'
+        return '"Uh.. who?"'
     elif r == 4:
-        '"Nobody ever been here with that name, least not that I know of."'
+        return '"Nobody ever been here with that name, least not that I know of."'
     elif r == 5:
-        '"Who? I don\'t know anyone by that name, buddy"'
+        return '"Who? I don\'t know anyone by that name, buddy"'
     
 
 @client.event

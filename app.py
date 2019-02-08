@@ -101,9 +101,9 @@ async def on_message(message):
 
     if message.content.startswith(describeCmd):
         player = cleanMessage(message, describeCmd)
-        msg = '"Friend, I got rightly no idea who you\'re talking about. Maybe check yer spelling?"'
+        msg = getUnexpected()
         if player == 'rayne':
-            msg = '"Are they going on missions now? Interesting choice. Didn\'t expect that from them."'
+            msg = '"They\'ve got a lizard hand. Weird. Also they\'re a girl now? Extra weird."'
         if player == 'wivaun':
             msg = '"Do you know where he gets his supply? Maybe hit me up, eh? My last dealer died on an adventure six months ago."'
         if player == 'khyrim':
@@ -147,7 +147,7 @@ async def on_message(message):
         if player == 'antaeus':
             msg = '"I... don\'t think he can read. Can he read?"'
         if player == 'dendro':
-            msg = '"Heh. Milk drinker."'
+            msg = '"Kid\'s walking around with some fancy gear now, isn\'t he? Got some fancy runes on that there sword. Wonder what they say."'
         if player == 'isla' or player == 'xarthisius' or player == 'peck' or player == 'rocky' or player == 'dexter' or player == 'sapphire' or player == 'sarah finley' or player == 'mieka' or player == 'karl' or player == 'artax' or player == 'granny' or player == 'keldrick' or player == 'yai' or player == 'vizigo' or player == 'tuli' or player == 'valkea':
             msg = '"Nice to see \'em around the taproom sometimes. Cheers me up, ya know? Makes me less lonely."'
             
@@ -184,6 +184,22 @@ def isDisadvantage(message):
 
 def isAdvOrDis(message):
     return isAdvantage(message) or isDisadvantage(message)
+
+def getUnexpected():
+    r = random.randint(0, 5)
+    if r == 0:
+        return '"Friend, I got rightly no idea who you\'re talking about. Maybe check yer spelling?"'
+    elif r == 1:
+        '"Who in the nine hells is that? Maybe yer spelling is off, pal."'
+    elif r == 2:
+        '"Fella, I\'m not familiar with that individual. Did ya spell the name wrong?"'
+    elif r == 3:
+        '"Uh.. who?"'
+    elif r == 4:
+        '"Nobody ever been here with that name, least not that I know of."'
+    elif r == 5:
+        '"Who? I don\'t know anyone by that name, buddy"'
+    
 
 @client.event
 async def on_ready():

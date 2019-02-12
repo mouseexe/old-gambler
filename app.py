@@ -74,8 +74,10 @@ async def on_message(message):
                     elif r == 20:
                         maxRoll = True
                     if isCassandra(cleanmsg) and r < 8:
-                            r = 8
-                    writeup = '(' + str(r) + ')'
+                        r = 8
+                        writeup = '(' + str(r) + '*)'
+                    else:
+                        writeup = '(' + str(r) + ')'
                     if isAdvantage(cleanmsg):
                         if r > total:
                             total = r

@@ -75,7 +75,7 @@ async def on_message(message):
                         maxRoll = True
                     writeup = '(' + str(r) + ')'
                     if isAdvantage(cleanmsg):
-                        if isCassandra and r < 8:
+                        if isCassandra(cleanmsg) and r < 8:
                             r = 8
                         if r > total:
                             total = r

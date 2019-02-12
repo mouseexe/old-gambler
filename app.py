@@ -52,8 +52,8 @@ async def on_message(message):
         dice = cleanmsg.split('+')
         if isAdvOrDis(cleanmsg):
             dice[0] = '2d20'
-            if isCassandra(cleanmsg):
-                dice[1] = '8'
+        if isCassandra(cleanmsg):
+            dice = ['2d20', '8']
         total = 0
         minRoll = False
         maxRoll = False

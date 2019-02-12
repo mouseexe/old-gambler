@@ -52,7 +52,7 @@ async def on_message(message):
         dice = cleanmsg.split('+')
         if isAdvOrDis(cleanmsg):
             dice[0] = '2d20'
-            if isCassandra:
+            if isCassandra(cleanmsg):
                 dice[1] = '8'
         total = 0
         minRoll = False
@@ -119,7 +119,7 @@ async def on_message(message):
         if player == 'wulfred':
             msg = '"A tavern always needs a grumpy old dwarf. I\'ll miss the guy."'
         if player == 'throk':
-            msg = '"Throk and Peck, hell of duo. Who doesn\'t love Throk?"'
+            msg = '"Throk is an unstoppable god."'
         if player == 'fenric':
             msg = '"I heard he got killed by a swarm of squirrels in the night."'
         if player == 'fidelius':

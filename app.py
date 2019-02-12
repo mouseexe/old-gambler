@@ -17,7 +17,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if '@Dungeon Master' in message.content:
+    if '@SquigBoss#1353' in message.content:
         msg = '"You fool! You spoke the forbidden words! His wrath falls upon us!"'
         await client.send_message(message.channel, msg)
         
@@ -52,6 +52,8 @@ async def on_message(message):
         dice = cleanmsg.split('+')
         if isAdvOrDis(cleanmsg):
             dice[0] = '2d20'
+            if isCassandra:
+                dice[1] = '8'
         total = 0
         minRoll = False
         maxRoll = False
@@ -73,6 +75,8 @@ async def on_message(message):
                         maxRoll = True
                     writeup = '(' + str(r) + ')'
                     if isAdvantage(cleanmsg):
+                        if isCassandra and r < 8:
+                            r = 8
                         if r > total:
                             total = r
                         writeup += ', '
@@ -109,7 +113,7 @@ async def on_message(message):
         if player == 'khyrim':
             msg = '"Live by the edge, die by the edge. Rest in peace pal."'
         if player == 'kay':
-            msg = '"That skull mask is creepy as hell. Something ain\'t aight right with that kid."'
+            msg = '"He\'s out there mapping stars in the daytime, and now he\'s speaking with extraplanar beings? Creepy."'
         if player == 'kai':
             msg = '"Now I won\'t mix up Kai and Kay, finally. I will miss her though, good lass."'
         if player == 'wulfred':
@@ -137,11 +141,11 @@ async def on_message(message):
         if player == 'namira':
             msg = '"She had a good heart. Still curious about those burns on her eyes, but I guess we\'ll never know. Wonder what Rayne wrote on her card..."'
         if player == 'moryn':
-            msg = '"Hell of a fiery beard! Enough to even rival mine. A holy type though, great. Just great."'
+            msg = '"Wonder if I\'ll ever see him again. I like dwarves. Good drinkers."'
         if player == 'cassandra':
-            msg = '"Great, Empire breathing down my back again. Just what I needed."'
+            msg = '"Wonder how many toes she\'s got now."'
         if player == 'crimson':
-            msg = '"Picking a fight on her first night was a fascinating choice. Smart money is on her over the elf."'
+            msg = '"Who has less conversation skills? Her, or her plant?"'
         if player == 'aban':
             msg = '"The \'others\' huh? Who the flying fuck are the others? Am I an other?"'
         if player == 'antaeus':
@@ -177,10 +181,13 @@ def cleanMessage(message, command):
     return message.content[trim:].lower().strip()
 
 def isAdvantage(message):
-    return message.startswith('advantage')
+    return message.startswith('advantage') or isCassandra(message)
 
 def isDisadvantage(message):
     return message.startswith('disadvantage')
+
+def isCassandra(message):
+    return message.startswith('cassandra') or message.startswith('cass')
 
 def isAdvOrDis(message):
     return isAdvantage(message) or isDisadvantage(message)

@@ -177,6 +177,10 @@ async def on_message(message):
         \nYou can chain these queries together with a \'+\'.
         \nFor example, you can say \"!roll 1d420 + 1d69 + 42069\""""
         await client.send_message(message.channel, msg)
+        
+    if message.content.startswith('!stat'):
+        msg = rollOneStat()
+        await client.send_message(message.channel, msg)
 
 def cleanMessage(message, command):
     trim = len(command)
@@ -209,6 +213,17 @@ def getUnexpected():
     elif r == 5:
         return '"Who? I don\'t know anyone by that name, buddy"'
     
+def rollOneStat():
+    arr = [r.randint(1, 6), r.randint(1, 6), r.randint(1, 6), r.randint(1, 6)]
+    minIdx = 0
+    for idx in range(len(arr)):
+        if arr[idx] < arr[minIdx]:
+            minIdx = idx
+    total = 0
+    for idx in range(len(arr)):
+        if idx != minIdx:
+            total += arr[idx]
+    return total
 
 @client.event
 async def on_ready():

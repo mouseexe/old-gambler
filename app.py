@@ -185,7 +185,7 @@ async def on_message(message):
     if message.content == '!statblock':
         msg = '['
         for i in range(6):
-            msg += rollOneStat()
+            msg += str(rollOneStat())
             if i < 5:
                 msg += ', '
         msg += ']'

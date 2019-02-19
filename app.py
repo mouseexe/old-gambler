@@ -214,7 +214,7 @@ def getUnexpected():
         return '"Who? I don\'t know anyone by that name, buddy"'
     
 def rollOneStat():
-    arr = [r.randint(1, 6), r.randint(1, 6), r.randint(1, 6), r.randint(1, 6)]
+    arr = [random.randint(1, 6), random.randint(1, 6), random.randint(1, 6), random.randint(1, 6)]
     minIdx = 0
     for idx in range(len(arr)):
         if arr[idx] < arr[minIdx]:

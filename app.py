@@ -21,10 +21,16 @@ async def on_message(message):
         msg = '"You fool! You spoke the forbidden words! His wrath falls upon us!"'
         await client.send_message(message.channel, msg)
         
-    if message.content.lower().startswith('hey sam can i'):
+    if message.content.lower().startswith('hey sam can i '):
         msg = '"No."'
         if random.randint(1, 100) == 1:
             msg = '"Eh, sure. Why not?"'
+        await client.send_message(message.channel, msg)
+        
+    if message.content.lower().startswith('hey will should i '):
+        msg = '"Do it."'
+        if random.randint(1, 100) == 1:
+            msg = '"http://gph.is/2efKpdD"'
         await client.send_message(message.channel, msg)
     
     if 'RIP' in message.content:

@@ -30,7 +30,7 @@ async def on_message(message):
     if message.content.lower().startswith('hey will should i '):
         msg = '"Do it."'
         if random.randint(1, 100) == 1:
-            msg = '"http://gph.is/2efKpdD"'
+            msg = 'http://gph.is/2efKpdD'
         await client.send_message(message.channel, msg)
     
     if 'RIP' in message.content:

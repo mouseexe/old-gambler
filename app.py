@@ -127,11 +127,11 @@ async def on_message(message):
         if player == 'wulfred':
             msg = '"A tavern always needs a grumpy old dwarf. I\'ll miss the guy."'
         if player == 'throk':
-            msg = '"Throk is an unstoppable god."'
+            msg = '"Iacto got nothing on Throk."'
         if player == 'fenric':
             msg = '"I heard he got killed by a swarm of squirrels in the night."'
         if player == 'fidelius':
-            msg = '"This little bitch cheated at cards."'
+            msg = '"That little bitch cheated at cards."'
         if player == 'vondal':
             msg = '"Who? Oh, is he dead now? Didn\'t notice."'
         if player == 'avos':
@@ -141,17 +141,17 @@ async def on_message(message):
         if player == 'evin':
             msg = '"Gone too soon, pour one out for the lad."'
         if player == 'takrend':
-            msg = '"So many of you "brave" adventurers out here and this guy is the only one who can drive a boat? Weak."'
+            msg = '"Never see him around. Still my favorite."'
         if player == 'wil' or player == 'wilavor':
             msg = '"Kid sure knows how to drum up a crowd. Get it? Because he\'s got that fancy drum?"'
         if player == 'agamemnon':
             msg = '"Bit of an explosive exit, no? Wonder where they went. At least I got their dogs. Who\'s a good girl? You are!"'
         if player == 'namira':
-            msg = '"She had a good heart. Still curious about those burns on her eyes, but I guess we\'ll never know. Wonder what Rayne wrote on her card..."'
+            msg = '"Aasimar, huh? Guess that was kind of obvious in hindsight. Burn marks on the eyes and all that."'
         if player == 'moryn':
             msg = '"Glad he made it back alright. He reminds me of my dad. But less grumpy."'
         if player == 'cassandra':
-            msg = '"She\'s a lot nicer than I gave her credit for. Seems to really care about the Tiefling girl too."'
+            msg = '"She\'s a lot nicer than I gave her credit for. Seems to really care about the tiefling girl too."'
         if player == 'crimson':
             msg = '"She hasn\'t gotten any less abrasive, huh? Must be a druid thing."'
         if player == 'aban':

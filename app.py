@@ -37,6 +37,10 @@ async def on_message(message):
         msg = '<:payrespects:502292405152645122>'
         await client.send_message(message.channel, msg)
     
+    if 'pour one out' in message.content.lower():
+        msg = ':beer::arrow_heading_down:'
+        await client.send_message(message.channel, msg)
+
     if message.content.startswith('!throk'):
         msg = '<:throkflex:486598697228959760>'
         await client.send_message(message.channel, msg)

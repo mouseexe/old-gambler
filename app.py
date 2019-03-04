@@ -55,6 +55,7 @@ async def on_message(message):
 
     if message.content.startswith(rollCmd) or message.content.startswith(altRollCmd):
         cleanmsg = cleanMessage(message, rollCmd)
+        cleanmsg.replace('-', '+-')
         dice = cleanmsg.split('+')
         if isAdvOrDis(cleanmsg):
             dice[0] = '2d20'

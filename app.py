@@ -37,11 +37,6 @@ async def on_message(message):
         msg = '<:payrespects:502292405152645122>'
         await client.send_message(message.channel, msg)
     
-    if 'roll better' in message.content.lower():
-        if random.randint(1, 10) == 1:
-	    msg = '<:4ban:550062949603999981>'
-            await client.send_message(message.channel, msg)
-
     if message.content.startswith('!throk'):
         msg = '<:throkflex:486598697228959760>'
         await client.send_message(message.channel, msg)

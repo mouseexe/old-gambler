@@ -115,9 +115,9 @@ async def on_message(message):
         player = cleanMessage(message, describeCmd)
         msg = getUnexpected()
         if player == 'rayne':
-            msg = '"They\'ve got a lizard hand. Weird. Also they\'re a girl now? Extra weird."'
+            msg = '"She\'s got a lizard hand. Weird. Also she\'s a girl now? Extra weird."'
         if player == 'wivaun':
-            msg = '"Do you know where he gets his supply? Maybe hit me up, eh? My last dealer died on an adventure six months ago."'
+            msg = '"He was a good soul. Not sure what it was that messed him up like that, but I hope things get better."'
         if player == 'khyrim':
             msg = '"Live by the edge, die by the edge. Rest in peace pal."'
         if player == 'kay':
@@ -143,24 +143,24 @@ async def on_message(message):
         if player == 'takrend':
             msg = '"So many of you "brave" adventurers out here and this guy is the only one who can drive a boat? Weak."'
         if player == 'wil' or player == 'wilavor':
-            msg = '"Kid needs a stage name. Wilavor the Bold. No, that\'s boring. Wilavor the Magnificent! No, that\'s too cocky. Hm..."'
+            msg = '"Kid sure knows how to drum up a crowd. Get it? Because he\'s got that fancy drum?"'
         if player == 'agamemnon':
             msg = '"Bit of an explosive exit, no? Wonder where they went. At least I got their dogs. Who\'s a good girl? You are!"'
         if player == 'namira':
             msg = '"She had a good heart. Still curious about those burns on her eyes, but I guess we\'ll never know. Wonder what Rayne wrote on her card..."'
         if player == 'moryn':
-            msg = '"Wonder if I\'ll ever see him again. I like dwarves. Good drinkers."'
+            msg = '"Glad he made it back alright. He reminds me of my dad. But less grumpy."'
         if player == 'cassandra':
-            msg = '"Wonder how many toes she\'s got now."'
+            msg = '"She\'s a lot nicer than I gave her credit for. Seems to really care about the Tiefling girl too."'
         if player == 'crimson':
-            msg = '"Who has less conversation skills? Her, or her plant?"'
+            msg = '"She hasn\'t gotten any less abrasive, huh? Must be a druid thing."'
         if player == 'aban':
-            msg = '"The \'others\' huh? Who the flying fuck are the others? Am I an other?"'
+            msg = '<:4ban:550062949603999981>'
         if player == 'antaeus':
-            msg = '"I... don\'t think he can read. Can he read?"'
+            msg = '"The new king of baller moves. 100% badass, even if he can\'t read."'
         if player == 'dendro':
             msg = '"Kid\'s walking around with some fancy gear now, isn\'t he? Got some fancy runes on that there sword. Wonder what they say."'
-        if player == 'isla' or player == 'xarthisius' or player == 'peck' or player == 'rocky' or player == 'dexter' or player == 'sapphire' or player == 'sarah finley' or player == 'mieka' or player == 'karl' or player == 'artax' or player == 'granny' or player == 'keldrick' or player == 'yai' or player == 'vizigo' or player == 'tuli' or player == 'valkea':
+        if player == 'isla' or player == 'xarthisius' or player == 'peck' or player == 'rocky' or player == 'dexter' or player == 'sapphire' or player == 'sarah finley' or player == 'mieka' or player == 'karl' or player == 'artax' or player == 'granny' or player == 'keldrick' or player == 'yai' or player == 'vizigo' or player == 'tuli' or player == 'valkea' or player == 'quilliby':
             msg = '"Nice to see \'em around the taproom sometimes. Cheers me up, ya know? Makes me less lonely."'
             
         #msg = '<:payrespects:502292405152645122>'
@@ -177,11 +177,11 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
 
     if message.content.startswith('!help'):
-        msg = """To ask the Old Gambler to roll you a die (or multiple dice!) simply type \"!roll\", followed by your roll query.
-        \nRoll queries are either a number of dice, followed by a \'d\', followed by the sides on the die, or a straight number.
+        msg = """To ask the Old Gambler to roll you a die (or multiple dice!) simply type '!roll', followed by your roll query.
+        \nRoll queries are either a number of dice, followed by a 'd', followed by the sides on the die, or a straight number.
         \nFor example, you can use 1d20 or 42d69 to roll a single 20 sided die, or 42 69 sided dice.
-        \nYou can chain these queries together with a \'+\'.
-        \nFor example, you can say \"!roll 1d420 + 1d69 + 42069\""""
+        \nYou can chain these queries together with a '+'.
+        \nFor example, you can say '!roll 1d420 + 1d69 + 42069'"""
         await client.send_message(message.channel, msg)
         
     if message.content == '!stat':

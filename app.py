@@ -38,8 +38,8 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
     
     if 'pour one out' in message.content.lower():
-        msg = ':beer::arrow_heading_down:'
-        await client.send_message(message.channel, msg)
+        await client.add_reaction(message, ':beer:')
+        await client.add_reaction(message, ':arrow_heading_down:')
 
     if message.content.startswith('!throk'):
         msg = '<:throkflex:486598697228959760>'
@@ -118,13 +118,13 @@ async def on_message(message):
     if message.content.startswith(describeCmd):
         player = cleanMessage(message, describeCmd)
         msg = getUnexpected()
-        if player == 'rayne':
+        if player == 'rayne' or player == 'elf':
             msg = '"She\'s got a lizard hand. Weird. Also she\'s a girl now? Extra weird."'
         if player == 'wivaun':
             msg = '"He was a good soul. Not sure what it was that messed him up like that, but I hope things get better."'
         if player == 'khyrim':
             msg = '"Live by the edge, die by the edge. Rest in peace pal."'
-        if player == 'kay':
+        if player == 'kay' or player == 'boy':
             msg = '"He\'s out there mapping stars in the daytime, and now he\'s speaking with extraplanar beings? Creepy."'
         if player == 'kai':
             msg = '"Now I won\'t mix up Kai and Kay, finally. I will miss her though, good lass."'
@@ -146,21 +146,21 @@ async def on_message(message):
             msg = '"Gone too soon, pour one out for the lad."'
         if player == 'takrend':
             msg = '"Never see him around. Still my favorite."'
-        if player == 'wil' or player == 'wilavor':
+        if player == 'wil' or player == 'wilavor' or player == 'halves':
             msg = '"Kid sure knows how to drum up a crowd. Get it? Because he\'s got that fancy drum?"'
-        if player == 'agamemnon':
+        if player == 'agamemnon' or player == 'fireheart':
             msg = '"Bit of an explosive exit, no? Wonder where they went. At least I got their dogs. Who\'s a good girl? You are!"'
         if player == 'namira':
             msg = '"Aasimar, huh? Guess that was kind of obvious in hindsight. Burn marks on the eyes and all that."'
         if player == 'moryn':
             msg = '"Glad he made it back alright. He reminds me of my dad. But less grumpy."'
-        if player == 'cassandra':
+        if player == 'cassandra' or player == 'cass':
             msg = '"She\'s a lot nicer than I gave her credit for. Seems to really care about the tiefling girl too."'
         if player == 'crimson':
             msg = '"She hasn\'t gotten any less abrasive, huh? Must be a druid thing."'
-        if player == 'aban':
+        if player == 'aban' or player == 'slit-eyes':
             msg = '<:4ban:550062949603999981>'
-        if player == 'antaeus':
+        if player == 'antaeus' or player == 'goldy':
             msg = '"The new king of baller moves. 100% badass, even if he can\'t read."'
         if player == 'dendro':
             msg = '"Kid\'s walking around with some fancy gear now, isn\'t he? Got some fancy runes on that there sword. Wonder what they say."'

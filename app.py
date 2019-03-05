@@ -41,8 +41,8 @@ async def on_message(message):
     if 'pour one out' in message.content.lower():
         #beer = get(client.get_all_emojis(), name=':beer:')
         #arrow = get(client.get_all_emojis(), name=':arrow_heading_down:')
-        await client.add_reaction(message, '\U001F37A')
-        await client.add_reaction(message, '\U0002935')
+        await client.add_reaction(message, '\u+1F37A')
+        await client.add_reaction(message, '\u+2935')
 
     if message.content.startswith('!throk'):
         msg = '<:throkflex:486598697228959760>'

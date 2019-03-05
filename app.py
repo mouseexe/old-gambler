@@ -2,6 +2,7 @@
 import discord
 import random
 import os
+from discord.utils import get
 
 TOKEN = os.environ.get('DISCORDTOKEN', 'default value')
 
@@ -38,8 +39,10 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
     
     if 'pour one out' in message.content.lower():
-        await client.add_reaction(message, ':beer:')
-        await client.add_reaction(message, ':arrow_heading_down:')
+        beer = get(bot.get_all_emojis(), name='beer')
+        arrow = get(bot.get_all_emojis(), name='arrow_heading_down')
+        await client.add_reaction(message, beer)
+        await client.add_reaction(message, arrow)
 
     if message.content.startswith('!throk'):
         msg = '<:throkflex:486598697228959760>'
@@ -120,7 +123,7 @@ async def on_message(message):
         msg = getUnexpected()
         if player == 'rayne' or player == 'elf':
             msg = '"She\'s got a lizard hand. Weird. Also she\'s a girl now? Extra weird."'
-        if player == 'wivaun':
+        if player == 'wivaun' or player == 'wiv':
             msg = '"He was a good soul. Not sure what it was that messed him up like that, but I hope things get better."'
         if player == 'khyrim':
             msg = '"Live by the edge, die by the edge. Rest in peace pal."'
@@ -130,7 +133,7 @@ async def on_message(message):
             msg = '"Now I won\'t mix up Kai and Kay, finally. I will miss her though, good lass."'
         if player == 'wulfred':
             msg = '"A tavern always needs a grumpy old dwarf. I\'ll miss the guy."'
-        if player == 'throk':
+        if player == 'throk' or player == 'muscles':
             msg = '"Iacto got nothing on Throk."'
         if player == 'fenric':
             msg = '"I heard he got killed by a swarm of squirrels in the night."'
@@ -152,7 +155,7 @@ async def on_message(message):
             msg = '"Bit of an explosive exit, no? Wonder where they went. At least I got their dogs. Who\'s a good girl? You are!"'
         if player == 'namira':
             msg = '"Aasimar, huh? Guess that was kind of obvious in hindsight. Burn marks on the eyes and all that."'
-        if player == 'moryn':
+        if player == 'moryn' or player == 'dwarf':
             msg = '"Glad he made it back alright. He reminds me of my dad. But less grumpy."'
         if player == 'cassandra' or player == 'cass':
             msg = '"She\'s a lot nicer than I gave her credit for. Seems to really care about the tiefling girl too."'
@@ -162,7 +165,7 @@ async def on_message(message):
             msg = '<:4ban:550062949603999981>'
         if player == 'antaeus' or player == 'goldy':
             msg = '"The new king of baller moves. 100% badass, even if he can\'t read."'
-        if player == 'dendro':
+        if player == 'dendro' or player == 'milkdrinker':
             msg = '"Kid\'s walking around with some fancy gear now, isn\'t he? Got some fancy runes on that there sword. Wonder what they say."'
         if player == 'isla' or player == 'xarthisius' or player == 'peck' or player == 'rocky' or player == 'dexter' or player == 'sapphire' or player == 'sarah finley' or player == 'mieka' or player == 'karl' or player == 'artax' or player == 'granny' or player == 'keldrick' or player == 'yai' or player == 'vizigo' or player == 'tuli' or player == 'valkea' or player == 'quilliby':
             msg = '"Nice to see \'em around the taproom sometimes. Cheers me up, ya know? Makes me less lonely."'

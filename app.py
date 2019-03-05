@@ -39,8 +39,8 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
     
     if 'pour one out' in message.content.lower():
-        beer = get(bot.get_all_emojis(), name='beer')
-        arrow = get(bot.get_all_emojis(), name='arrow_heading_down')
+        beer = get(client.get_all_emojis(), name='beer')
+        arrow = get(client.get_all_emojis(), name='arrow_heading_down')
         await client.add_reaction(message, beer)
         await client.add_reaction(message, arrow)
 

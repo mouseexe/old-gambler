@@ -39,10 +39,10 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
     
     if 'pour one out' in message.content.lower():
-        beer = get(client.get_all_emojis(), name=':beer:')
-        arrow = get(client.get_all_emojis(), name=':arrow_heading_down:')
-        await client.add_reaction(message, beer)
-        await client.add_reaction(message, arrow)
+        #beer = get(client.get_all_emojis(), name=':beer:')
+        #arrow = get(client.get_all_emojis(), name=':arrow_heading_down:')
+        await client.add_reaction(message, '🍺')
+        await client.add_reaction(message, '⤵️')
 
     if message.content.startswith('!throk'):
         msg = '<:throkflex:486598697228959760>'

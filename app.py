@@ -159,7 +159,7 @@ async def on_message(message):
             msg = '"Glad he made it back alright. He reminds me of my dad. But less grumpy."'
         if player == 'cassandra' or player == 'cass':
             msg = '"She\'s a lot nicer than I gave her credit for. Seems to really care about the tiefling girl too."'
-        if player == 'crimson':
+        if player == 'crimson' or player == 'firesoul':
             msg = '"She hasn\'t gotten any less abrasive, huh? Must be a druid thing."'
         if player == 'aban' or player == 'slit-eyes':
             msg = '<:4ban:550062949603999981>'

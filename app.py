@@ -38,11 +38,11 @@ async def on_message(message):
         msg = '<:payrespects:502292405152645122>'
         await client.send_message(message.channel, msg)
     
-    #if 'pour one out' in message.content.lower():
+    if 'pour one out' in message.content.lower():
         #beer = get(client.get_all_emojis(), name=':beer:')
         #arrow = get(client.get_all_emojis(), name=':arrow_heading_down:')
-        #await client.add_reaction(message, '\u1F37A')
-        #await client.add_reaction(message, '\u2935')
+        await client.add_reaction(message, '\u1F37A')
+        await client.add_reaction(message, '\u2935')
 
     if message.content.startswith('!throk'):
         msg = '<:throkflex:486598697228959760>'
@@ -170,17 +170,6 @@ async def on_message(message):
         if player == 'isla' or player == 'xarthisius' or player == 'peck' or player == 'rocky' or player == 'dexter' or player == 'sapphire' or player == 'sarah finley' or player == 'mieka' or player == 'karl' or player == 'artax' or player == 'granny' or player == 'keldrick' or player == 'yai' or player == 'vizigo' or player == 'tuli' or player == 'valkea' or player == 'quilliby':
             msg = '"Nice to see \'em around the taproom sometimes. Cheers me up, ya know? Makes me less lonely."'
             
-        #msg = '<:payrespects:502292405152645122>'
-        await client.send_message(message.channel, msg)
-
-    if message.content.startswith('!snore'):
-        #Join #taproom and play snoring audio
-        msg = '"Zzz"'
-        await client.send_message(message.channel, msg)
-
-    if message.content.startswith('!wake'):
-        #Leave taproom
-        msg = '"I\'m up! I\'m up!"'
         await client.send_message(message.channel, msg)
 
     if message.content.startswith('!help'):

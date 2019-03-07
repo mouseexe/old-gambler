@@ -35,12 +35,11 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
     
     if 'RIP' in message.content:
-        msg = '<:payrespects:502292405152645122>'
-        await client.send_message(message.channel, msg)
+        respects = get(client.get_all_emojis(), name='payrespects')
+        #msg = '<:payrespects:502292405152645122>'
+        await client.add_reaction(message, respects)
     
     if 'pour one out' in message.content.lower():
-        #beer = get(client.get_all_emojis(), name=':beer:')
-        #arrow = discord.Emoji(get(client.get_all_emojis(), name='arrow_heading_down'))
         await client.add_reaction(message, '🍺')
         await client.add_reaction(message, '⤵')
 

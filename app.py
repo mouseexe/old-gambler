@@ -17,10 +17,6 @@ async def on_message(message):
     # we do not want the bot to reply to itself
     if message.author == client.user:
         return
-
-    if '@SquigBoss#1353' in message.content:
-        msg = '"You fool! You spoke the forbidden words! His wrath falls upon us!"'
-        await client.send_message(message.channel, msg)
         
     if message.content.lower().startswith('hey sam can '):
         msg = '"No."'
@@ -52,23 +48,17 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
     
     if 'good bot' in message.content.lower():
-        await client.add_reaction(message, '')
-        await client.add_reaction(message, '')
-        await client.add_reaction(message, '')
-        await client.add_reaction(message, '')
-        await client.add_reaction(message, '')
-        await client.add_reaction(message, '')
+        await client.add_reaction(message, '🇹')
+        await client.add_reaction(message, '🇭')
+        await client.add_reaction(message, '🇦')
+        await client.add_reaction(message, '🇳')
+        await client.add_reaction(message, '🇰')
+        await client.add_reaction(message, '🇸')
         #msg = '"Thanks!"'
         #await client.send_message(message.channel, msg)
 
     if 'bad bot' in message.content.lower():
-        await client.add_reaction(message, '')
-        await client.add_reaction(message, '')
-        await client.add_reaction(message, '')
-        await client.add_reaction(message, '')
-        await client.add_reaction(message, '')
-        await client.add_reaction(message, '')
-        await client.add_reaction(message, '')
+        await client.add_reaction(message, '🖕')
         #msg = '"Fuck you."'
         #await client.send_message(message.channel, msg)
 

@@ -40,7 +40,7 @@ async def on_message(message):
     
     if 'pour one out' in message.content.lower():
         #beer = get(client.get_all_emojis(), name=':beer:')
-        arrow = (discord.Emoji)get(client.get_all_emojis(), name=':arrow_heading_down:')
+        arrow = discord.Emoji(get(client.get_all_emojis(), name='arrow_heading_down'))
         await client.add_reaction(message, '🍺')
         await client.add_reaction(message, arrow)
 

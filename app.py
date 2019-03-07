@@ -68,7 +68,7 @@ async def on_message(message):
         if isAdvOrDis(cleanmsg):
             dice[0] = '2d20'
         if isCassandra(cleanmsg):
-            dice = ['2d20', '8']
+            dice = ['2d20', '10']
         total = 0
         minRoll = False
         maxRoll = False

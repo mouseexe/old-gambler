@@ -13,7 +13,7 @@ altRollCmd = '/roll'
 describeCmd = '!describe'
 
 @client.event
-async def on_message(message):
+async def on_message(message, channelID):
     # we do not want the bot to reply to itself
     if message.author == client.user:
         return
@@ -40,7 +40,7 @@ async def on_message(message):
     
     if 'pour one out' in message.content.lower():
         #beer = get(client.get_all_emojis(), name=':beer:')
-        arrow = discord.Emoji(name='arrow_heading_down', server=client.get_server())
+        arrow = discord.Emoji(name='arrow_heading_down', server=client.get_server(client.channels[channelID].guild_id))
         await client.add_reaction(message, '🍺')
         await client.add_reaction(message, arrow)
 

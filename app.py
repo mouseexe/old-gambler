@@ -52,12 +52,25 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
     
     if 'good bot' in message.content.lower():
-        msg = '"Thanks!"'
-        await client.send_message(message.channel, msg)
+        await client.add_reaction(message, '')
+        await client.add_reaction(message, '')
+        await client.add_reaction(message, '')
+        await client.add_reaction(message, '')
+        await client.add_reaction(message, '')
+        await client.add_reaction(message, '')
+        #msg = '"Thanks!"'
+        #await client.send_message(message.channel, msg)
 
     if 'bad bot' in message.content.lower():
-        msg = '"Fuck you."'
-        await client.send_message(message.channel, msg)
+        await client.add_reaction(message, '')
+        await client.add_reaction(message, '')
+        await client.add_reaction(message, '')
+        await client.add_reaction(message, '')
+        await client.add_reaction(message, '')
+        await client.add_reaction(message, '')
+        await client.add_reaction(message, '')
+        #msg = '"Fuck you."'
+        #await client.send_message(message.channel, msg)
 
     if message.content.startswith(rollCmd) or message.content.startswith(altRollCmd):
         cleanmsg = cleanMessage(message, rollCmd).replace('-', '+-')

@@ -42,7 +42,7 @@ async def on_message(message):
         #beer = get(client.get_all_emojis(), name=':beer:')
         #arrow = get(client.get_all_emojis(), name=':arrow_heading_down:')
         await client.add_reaction(message, '🍺')
-        await client.add_reaction(message, '⤵️')
+        await client.add_reaction(message, 'U+2935')
 
     if message.content.startswith('!throk'):
         msg = '<:throkflex:486598697228959760>'

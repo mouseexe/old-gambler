@@ -19,7 +19,7 @@ async def on_message(message):
     return
 
   if message.content.lower().startswith('!log'):
-    print(message.author + ': ' + message.content)
+    print(str(message.author) + ': ' + message.content)
 
   if '<@!185462125940965376>' in message.content:
     msg = '"Motherfucker."'

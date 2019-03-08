@@ -21,14 +21,8 @@ async def on_message(message):
   if message.content.lower().startswith('!log'):
     print(message.content)
 
-  if '@MouseEXE' in message.content:
-    msg = '"@MouseEXE"'
-    await client.send_message(message.channel, msg)
-  if '@Rayne (Kay)' in message.content:
-    msg = '"@Rayne (Kay)"'
-    await client.send_message(message.channel, msg)
-  if '@MouseEXE#8367' in message.content:
-    msg = '"@MouseEXE#8367"'
+  if '<@!149029488938713089>' in message.content:
+    msg = '"Ding!"'
     await client.send_message(message.channel, msg)
       
   if message.content.lower().startswith('hey sam can '):

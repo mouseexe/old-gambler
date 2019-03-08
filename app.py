@@ -21,8 +21,8 @@ async def on_message(message):
   if message.content.lower().startswith('!log'):
     print(message.content)
 
-  if '<@!149029488938713089>' in message.content:
-    msg = '"Ding!"'
+  if '<@!185462125940965376>' in message.content:
+    msg = '"Motherfucker."'
     await client.send_message(message.channel, msg)
       
   if message.content.lower().startswith('hey sam can '):

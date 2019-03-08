@@ -17,6 +17,16 @@ async def on_message(message):
     # we do not want the bot to reply to itself
     if message.author == client.user:
         return
+
+    if '@MouseEXE' in message.content:
+        msg = '"@MouseEXE"'
+        await client.send_message(message.channel, msg)
+    if '@Rayne (Kay)' in message.content:
+        msg = '"@Rayne (Kay)"'
+        await client.send_message(message.channel, msg)
+    if '@MouseEXE#8367' in message.content:
+        msg = '"@MouseEXE#8367"'
+        await client.send_message(message.channel, msg)
         
     if message.content.lower().startswith('hey sam can '):
         msg = '"No."'

@@ -42,7 +42,10 @@ async def on_message(message):
     await client.add_reaction(message, respects)
   
   if 'pour one out' in message.content.lower():
-    await client.add_reaction(message, '🍺')
+    if str(message.author) == 'Hitwave#9901':
+      await client.add_reaction(message, '🥛')
+    else
+      await client.add_reaction(message, '🍺')
     await client.add_reaction(message, '⤵')
 
   if message.content.startswith('!throk'):

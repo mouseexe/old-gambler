@@ -44,7 +44,7 @@ async def on_message(message):
   if 'pour one out' in message.content.lower():
     if str(message.author) == 'Hitwave#9901':
       await client.add_reaction(message, '🥛')
-    else
+    else:
       await client.add_reaction(message, '🍺')
     await client.add_reaction(message, '⤵')
 

@@ -133,7 +133,7 @@ async def on_message(message):
     player = cleanMessage(message, describeCmd)
     msg = getUnexpected()
     if player == 'rayne' or player == 'elf':
-      msg = '"She\'s got a lizard hand. Weird. Also she\'s a girl now? Extra weird."'
+      msg = '"She\'s got a lizard hand. <:rayneokay:556229430221996188> Weird. Also she\'s a girl now? Extra weird."'
     if player == 'wivaun' or player == 'wiv':
       msg = '"He was a good soul. Not sure what it was that messed him up like that, but I hope things get better."'
     if player == 'khyrim':

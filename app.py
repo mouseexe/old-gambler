@@ -98,8 +98,8 @@ async def on_message(message):
           elif r == 20:
             maxRoll = True
           if isCassandra(cleanmsg) and r < 8:
+            writeup = '(~~' + str(r) + '~~ 8)'
             r = 8
-            writeup = '(' + str(r) + '*)'
           else:
             writeup = '(' + str(r) + ')'
           if isAdvantage(cleanmsg):
@@ -238,17 +238,17 @@ def getUnexpected():
 def getRollMsg():
   r = random.randint(0, 5)
   if r == 0:
-    return '"Aye, I got a "'
+    return '"Aye, I got a '
   elif r == 1:
-    return '"The dice say "'
+    return '"The dice say '
   elif r == 2:
-    return '"That\'s not cocked, is it? Looks like a "'
+    return '"That\'s not cocked, is it? Looks like a '
   elif r == 3:
-    return '"Looks like a "'
+    return '"Looks like a '
   elif r == 4:
-    return '"Heh, almost went off the table! I rolled a "'
+    return '"Heh, almost went off the table! I rolled a '
   elif r == 5:
-    return '"I rolled a "'
+    return '"I rolled a '
     
 def rollOneStat():
   arr = [random.randint(1, 6), random.randint(1, 6), random.randint(1, 6), random.randint(1, 6)]

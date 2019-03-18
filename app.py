@@ -126,7 +126,7 @@ async def on_message(message):
     if (cleanmsg == '2d20' or isAdvOrDis(cleanmsg)) and minRoll and maxRoll:
       msg = '"Way to minmax your rolls, you got a ' + str(total) + '!"' + breakdown
     else:
-      msg = getRollMsg() + str(total) + '!"' + breakdown
+      msg = getRollMsg(total) + str(total) + '!"' + breakdown
     await client.send_message(message.channel, msg)
 
   if message.content.startswith(describeCmd):
@@ -235,20 +235,26 @@ def getUnexpected():
   elif r == 5:
     return '"Who? I don\'t know anyone by that name, buddy"'
 
-def getRollMsg():
+def getRollMsg(roll):
   r = random.randint(0, 5)
   if r == 0:
-    return '"Aye, I got a '
+    return '"Aye, I got' + getAn(roll)
   elif r == 1:
     return '"The dice say '
   elif r == 2:
-    return '"That\'s not cocked, is it? Looks like a '
+    return '"That\'s not cocked, is it? Looks like' + getAn(roll)
   elif r == 3:
-    return '"Looks like a '
+    return '"Looks like' + getAn(roll)
   elif r == 4:
-    return '"Heh, almost went off the table! I rolled a '
+    return '"Heh, almost went off the table! I rolled' + getAn(roll)
   elif r == 5:
-    return '"I rolled a '
+    return '"I rolled' + getAn(roll)
+
+def getAn(roll):
+  if roll == 8 or roll == 11 or roll == 18:
+    return ' an '
+  else:
+    return ' a '
     
 def rollOneStat():
   arr = [random.randint(1, 6), random.randint(1, 6), random.randint(1, 6), random.randint(1, 6)]

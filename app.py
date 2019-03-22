@@ -206,7 +206,7 @@ async def on_message(message):
       msg = '"Not the most annoying wizard I\'ve met, so credit there I suppose."'
     if player == 'yai':
       msg = '"She makes good tools. I appreciate that."'
-    if player == 'vizigo':
+    if player == 'vizigo' or player == 'vizigo al-fathwedi zaritissa':
       msg = '"I don\'t think he thinks I\'m real. Heh."'
     if player == 'tuli':
       msg = '"Glad we finally got him some tools."'
@@ -236,7 +236,7 @@ async def on_message(message):
       msg = '"That is a terrifying wolf."'
     if player == 'legend':
       msg = '"That elk is massive."'
-    if player == 'fortinbras':
+    if 'fortinbras' in player:
       msg = '"Please refer to the gentleman by his proper name."'
     if player == 'sir mister fortinbras olliver gripplesnitch iv esquire':
       msg = '"Thank you."'

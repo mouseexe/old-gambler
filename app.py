@@ -178,8 +178,68 @@ async def on_message(message):
       msg = '"The new king of baller moves. 100% badass, even if he can\'t read."'
     if player == 'dendro' or player == 'milkdrinker':
       msg = '"Kid\'s walking around with some fancy gear now, isn\'t he? Got some fancy runes on that there sword. Wonder what they say."'
-    if player == 'isla' or player == 'xarthisius' or player == 'peck' or player == 'rocky' or player == 'dexter' or player == 'sapphire' or player == 'sarah finley' or player == 'mieka' or player == 'karl' or player == 'artax' or player == 'granny' or player == 'keldrick' or player == 'yai' or player == 'vizigo' or player == 'tuli' or player == 'valkea' or player == 'quilliby':
-      msg = '"Nice to see \'em around the taproom sometimes. Cheers me up, ya know? Makes me less lonely."'
+    if player == 'isla':
+      msg = '"She puts up with way more shit than I would if I ran this place."'
+    if player == 'xarthisius':
+      msg = '"I didn\'t know monkeys could be wizards."'
+    if player == 'lumpkin':
+      msg = '"Creepy flesh fellow, ain\'t he?"'
+    if player == 'peck':
+      msg = '"I just wish Throk brought him around more often."'
+    if player == 'rocky':
+      msg = '"Also known as the: the only reason we keep the firbolg around."'
+    if player == 'dexter':
+      msg = '"Whossa good girl? You are! Yes you are!"'
+    if player == 'sapphire':
+      msg = '"Fetch! No, wait, don\'t eat that! No!"'
+    if player == 'sarah finley':
+      msg = '"Theodwin has put her through a lot of shit, hasn\'t he?"'
+    if player == 'mieka':
+      msg = '"Why is she always white? Doesn\'t Rayne know how edgy that is?"'
+    if player == 'karl':
+      msg = '"Has... anyone seen him around lately? Kay doesn\'t seem to bring him about much anymore."'
+    if player == 'artax':
+      msg = '"Not a huge fan of holy types, but he\'s alright I guess."'
+    if player == 'granny':
+      msg = '"She reminds me of my grandmother. Except... creepier."'
+    if player == 'keldrick':
+      msg = '"Not the most annoying wizard I\'ve met, so credit there I suppose."'
+    if player == 'yai':
+      msg = '"She makes good tools. I appreciate that."'
+    if player == 'vizigo':
+      msg = '"I don\'t think he thinks I\'m real. Heh."'
+    if player == 'tuli':
+      msg = '"Glad we finally got him some tools."'
+    if player == 'valkea':
+      msg = '"Honestly not really sure what her deal is. Maybe I\'ll ask one day."'
+    if player == 'quilliby':
+      msg = '"A walking quill? Weird."'
+    if player == 'mugston':
+      msg = '"A walking mug? Odd."'
+    if player == 'glassthew':
+      msg = '"A walking glass? Bizarre."'
+    if player == 'bowlrick':
+      msg = '"A walking bowl? Unreal."'
+    if player == 'scout':
+      msg = '"Cute weasel!"'
+    if player == 'skitter':
+      msg = '"Large rat!"'
+    if player == 'digger':
+      msg = '"First badger I\'ve seen in a while."'
+    if player == 'tusks':
+      msg = '"Fierce looking boar."'
+    if player == 'ebony':
+      msg = '"That is one large cat."'
+    if player == 'burrow':
+      msg = '"Oh, an even larger badger."'
+    if player == 'moon':
+      msg = '"That is a terrifying wolf."'
+    if player == 'legend':
+      msg = '"That elk is massive."'
+    if player == 'fortinbras':
+      msg = '"Please refer to the gentleman by his proper name."'
+    if player == 'sir mister fortinbras olliver gripplesnitch iv esquire'
+      msg = '"Thank you."'
         
     await client.send_message(message.channel, msg)
 

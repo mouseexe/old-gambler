@@ -238,7 +238,7 @@ async def on_message(message):
       msg = '"That elk is massive."'
     if 'fortinbras' in player:
       msg = '"Please refer to the gentleman by his proper name."'
-    if player == 'sir mister fortinbras olliver gripplesnitch iv esquire':
+    if player == 'sir mister fortinbras olliver gripplesnitch iv, esquire' or player == 'sir mister fortinbras olliver gripplesnitch iii, esquire':
       msg = '"Thank you."'
         
     await client.send_message(message.channel, msg)

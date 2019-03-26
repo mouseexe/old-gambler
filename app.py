@@ -26,7 +26,7 @@ async def on_message(message):
       
   if message.content.lower().startswith('hey sam can '):
     msg = '"No."'
-    if random.randint(1, 100) == 1:
+    if random.randint(1, 100) == 1 or (str(message.author) == 'SquigBoss#1353' and random.randint(1, 2) == 1):
       msg = '"Eh, sure. Why not?"'
     await client.send_message(message.channel, msg)
       
@@ -240,6 +240,8 @@ async def on_message(message):
       msg = '"Please refer to the gentleman by his proper name."'
     if player == 'sir mister fortinbras olliver gripplesnitch iv, esquire' or player == 'sir mister fortinbras olliver gripplesnitch iii, esquire':
       msg = '"Thank you."'
+    if 'mercer' in player:
+      msg = '"The antichrist."'
         
     await client.send_message(message.channel, msg)
 

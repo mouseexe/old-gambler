@@ -26,7 +26,7 @@ async def on_message(message):
       
   if message.content.lower().startswith('hey sam can '):
     msg = '"No."'
-    if random.randint(1, 100) == 1 or (str(message.author) == 'SquigBoss#1353' and random.randint(1, 2) == 1):
+    if random.randint(1, 100) == 1 or str(message.author) == 'SquigBoss#1353':
       msg = '"Eh, sure. Why not?"'
     await client.send_message(message.channel, msg)
       

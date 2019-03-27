@@ -35,6 +35,12 @@ async def on_message(message):
     if random.randint(1, 100) == 1:
       msg = 'http://gph.is/2efKpdD'
     await client.send_message(message.channel, msg)
+
+  if message.content.lower().startswith('hey kay will that joke ever not be funny'):
+    msg = '"Nope, it\'s hilarious."'
+    if str(message.author) == 'MouseEXE#8367':
+      msg = '"It was never funny."'
+    await client.send_message(message.channel, msg)
   
   if 'RIP' in message.content:
     respects = get(client.get_all_emojis(), name='payrespects')

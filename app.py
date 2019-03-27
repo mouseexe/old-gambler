@@ -61,6 +61,11 @@ async def on_message(message):
   if message.content.startswith('!inspiration'):
     msg = '<:milano:542939947544346644>'
     await client.send_message(message.channel, msg)
+
+  if str(message.author) == 'Will G.#6807' and random.randint(1, 30) == 1:
+    kick = get(client.get_all_emojis(), name='wulfkick')
+    await client.add_reaction(message, kick)
+
   
   if 'good bot' in message.content.lower():
     await client.add_reaction(message, '🇹')

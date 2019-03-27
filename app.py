@@ -253,6 +253,8 @@ async def on_message(message):
       msg = '"Thank you."'
     if 'mercer' in player:
       msg = '"The antichrist."'
+    if player == 'verdant':
+      msg = '"Bush."'
         
     await client.send_message(message.channel, msg)
 

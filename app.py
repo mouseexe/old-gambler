@@ -3,6 +3,7 @@ import random
 import os
 from discord.utils import get
 
+#Did you really think you could get my token that easily?
 TOKEN = os.environ.get('DISCORDTOKEN', 'default value')
 
 client = discord.Client()

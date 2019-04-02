@@ -273,7 +273,7 @@ async def on_message(message):
     if player == 'verdant':
       msg = '"Bush."'
     if player == 'vabalar':
-      msg = '"Never met a Fortnite, maybe you\'re imagining things?"'
+      msg = '"Never met a ' + getFirbolg()  + ', maybe you\'re imagining things?"'
         
     await client.send_message(message.channel, msg)
 
@@ -306,6 +306,31 @@ def cleanMessage(message, command):
   trim += len(command)
   return message.content[trim:].lower().strip()
 
+def getFirbolg():
+  r = random.randint(0, 10)
+  if r == 0:
+    return 'Fortnite'
+  elif r == 1:
+    return 'Fallot'
+  elif r == 2:
+    return 'Foglight'
+  elif r == 3:
+    return 'Failure'
+  elif r == 4:
+    return 'Flatulence'
+  elif r == 5:
+    return 'Fight Club'
+  elif r == 6:
+    return 'Vandalblast'
+  elif r == 7:
+    return 'Zavala'
+  elif r == 8:
+    return 'Fountain drink'
+  elif r == 9:
+    return 'F to pay respects'
+  elif r == 10:
+    return 'Farmer Joe'
+
 def isAdvantage(message):
   return message.startswith('advantage') or isCassandra(message)
 
@@ -319,7 +344,7 @@ def isAdvOrDis(message):
   return isAdvantage(message) or isDisadvantage(message)
 
 def getUnexpected():
-  r = random.randint(0, 6)
+  r = random.randint(0, 10)
   if r == 0:
     return '"Friend, I got rightly no idea who you\'re talking about. Maybe check yer spelling?"'
   elif r == 1:

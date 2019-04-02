@@ -303,7 +303,7 @@ def cleanMessage(message, command):
     trim = len(cmdMark)
   else:
     trim = len(cmdGambler)
-  trim = += len(command)
+  trim += len(command)
   return message.content[trim:].lower().strip()
 
 def isAdvantage(message):

@@ -255,6 +255,8 @@ async def on_message(message):
       msg = '"The antichrist."'
     if player == 'verdant':
       msg = '"Bush."'
+    if player == 'vabalar':
+      msg = '"Never met a Fortnite, maybe you\'re imagining things?"'
         
     await client.send_message(message.channel, msg)
 
@@ -296,7 +298,7 @@ def isAdvOrDis(message):
   return isAdvantage(message) or isDisadvantage(message)
 
 def getUnexpected():
-  r = random.randint(0, 5)
+  r = random.randint(0, 6)
   if r == 0:
     return '"Friend, I got rightly no idea who you\'re talking about. Maybe check yer spelling?"'
   elif r == 1:
@@ -309,6 +311,16 @@ def getUnexpected():
     return '"Nobody ever been here with that name, least not that I know of."'
   elif r == 5:
     return '"Who? I don\'t know anyone by that name, buddy"'
+  elif r == 6:
+    return '"I don\'t believe we\'ve got anyone here by that name, sorry \'bout that."'
+  elif r == 7:
+    return '"Nope, nobody named that who lives here. Maybe try to spell it right next time, hm?"'
+  elif r == 8:
+    return '"Is this a joke? None of the folks in here go by that name, friend."'
+  elif r == 9:
+    return '"Doesn\'t ring any bells to me."'
+  elif r == 10:
+    return '"Hmm, no, I don\'t think anyone here is called that."'
 
 def getRollMsg(roll):
   r = random.randint(0, 5)

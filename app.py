@@ -9,19 +9,16 @@ client = discord.Client()
 
 cmdMark = '!'
 cmdSlash = '/'
-cmdGambler = 'Hey Gambler, '
+cmdGambler = 'hey gambler, '
 trgLog = 'log'
 trgRoll = 'roll'
 trgDescribe = 'describe'
 trgInspiration = 'inspiration'
 trgThrok = 'throk'
-rollCmd = '!roll'
-altRollCmd = '/roll'
-describeCmd = '!describe'
 
 def getCommand(message):
-  if message.content.startswith((cmdMark, cmdSlash, cmdGambler)):
-    if message.content.startswith((cmdMark, cmdSlash)):
+  if message.content.lower().startswith((cmdMark, cmdSlash, cmdGambler)):
+    if message.content.lower().startswith((cmdMark, cmdSlash)):
       trim = len(cmdMark)
     else:
       trim = len(cmdGambler)

@@ -20,8 +20,8 @@ altRollCmd = '/roll'
 describeCmd = '!describe'
 
 def getCommand(message):
-  if message.content.lower().startswith((cmdMark, cmdSlash, cmdGambler)):
-    if message.content.lower().startswith((cmdMark, cmdSlash)):
+  if message.content.startswith((cmdMark, cmdSlash, cmdGambler)):
+    if message.content.startswith((cmdMark, cmdSlash)):
       trim = len(cmdMark)
     else:
       trim = len(cmdGambler)

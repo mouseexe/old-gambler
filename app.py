@@ -7,9 +7,26 @@ TOKEN = os.environ.get('DISCORDTOKEN', 'default value')
 
 client = discord.Client()
 
+cmdMark = '!'
+cmdSlash = '/'
+cmdGambler = 'Hey Gambler, '
+trgLog = 'log'
+trgRoll = 'roll'
+trgDescribe = 'describe'
+trgInspiration = 'inspiration'
+trgThrok = 'throk'
 rollCmd = '!roll'
 altRollCmd = '/roll'
 describeCmd = '!describe'
+
+def getCommand(message):
+  if message.content.lower().startswith((cmdMark, cmdSlash, cmdGambler)):
+    if message.content.lower().startswith((cmdMark, cmdSlash)):
+      trim = len(cmdMark)
+    else:
+      trim = len(cmdGambler)
+    return message.content[trim:].lower().split(' ')[0]
+  return 'nocommand'
 
 @client.event
 async def on_message(message):
@@ -17,7 +34,7 @@ async def on_message(message):
   if message.author == client.user:
     return
 
-  if message.content.lower().startswith('!log'):
+  if getCommand(message) == trgLog:
     print(str(message.author) + ': ' + message.content)
 
   if '<@!185462125940965376>' in message.content:

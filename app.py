@@ -71,11 +71,11 @@ async def on_message(message):
       await client.add_reaction(message, '🍺')
     await client.add_reaction(message, '⤵')
 
-  if message.content.startswith('!throk'):
+  if getCommand(message) == trgThrok:
     msg = '<:throkflex:486598697228959760>'
     await client.send_message(message.channel, msg)
       
-  if message.content.startswith('!inspiration'):
+  if getCommand(message) == trgInspiration:
     msg = '<:milano:542939947544346644>'
     await client.send_message(message.channel, msg)
 
@@ -99,8 +99,8 @@ async def on_message(message):
     #msg = '"Fuck you."'
     #await client.send_message(message.channel, msg)
 
-  if message.content.startswith(rollCmd) or message.content.startswith(altRollCmd):
-    cleanmsg = cleanMessage(message, rollCmd).replace('-', '+-')
+  if getCommand(message) == trgRoll:
+    cleanmsg = cleanMessage(message, trgRoll).replace('-', '+-')
     dice = cleanmsg.split('+')
     if isAdvOrDis(cleanmsg):
       dice[0] = '2d20'
@@ -157,8 +157,8 @@ async def on_message(message):
       msg = getRollMsg(total) + str(total) + '!"' + breakdown
     await client.send_message(message.channel, msg)
 
-  if message.content.startswith(describeCmd):
-    player = cleanMessage(message, describeCmd)
+  if getCommand(message) == trgDescribe:
+    player = cleanMessage(message, trgDescribe)
     msg = getUnexpected()
     if player == 'rayne' or player == 'scaley':
       msg = '"She\'s got a lizard hand. Weird. Also she\'s a girl now? Extra weird."'
@@ -299,7 +299,11 @@ async def on_message(message):
     await client.send_message(message.channel, msg)
 
 def cleanMessage(message, command):
-  trim = len(command)
+  if message.content.startswith((cmdMark, cmdSlash)):
+    trim = len(cmdMark)
+  else:
+    trim = len(cmdGambler)
+  trim = += len(command)
   return message.content[trim:].lower().strip()
 
 def isAdvantage(message):

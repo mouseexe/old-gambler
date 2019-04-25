@@ -159,19 +159,19 @@ async def on_message(message):
     player = cleanMessage(message, trgDescribe)
     msg = getUnexpected()
     if player == 'rayne' or player == 'scaley':
-      msg = '"She\'s got a lizard hand. Weird. Also she\'s a girl now? Extra weird."'
+      msg = '"Nerd."'
     if player == 'wivaun' or player == 'wiv':
       msg = '"He was a good soul. Not sure what it was that messed him up like that, but I hope things get better."'
     if player == 'khyrim':
       msg = '"Live by the edge, die by the edge. Rest in peace pal."'
     if player == 'kay' or player == 'boy':
-      msg = '"He\'s out there mapping stars in the daytime, and now he\'s speaking with extraplanar beings? Creepy."'
+      msg = '"Kid\'s been taking a lot of initiative lately. Not sure if I should be proud or scared."'
     if player == 'kai':
       msg = '"Now I won\'t mix up Kai and Kay, finally. I will miss her though, good lass."'
     if player == 'wulfred':
       msg = '"A tavern always needs a grumpy old dwarf. I\'ll miss the guy."'
     if player == 'throk' or player == 'muscles':
-      msg = '"Iacto got nothing on Throk."'
+      msg = '"Throk\'s so tough, I bet he\'d eat a bowl of nails for breakfast. Without any milk."'
     if player == 'fenric':
       msg = '"I heard he got killed by a swarm of squirrels in the night."'
     if player == 'fidelius':
@@ -185,7 +185,7 @@ async def on_message(message):
     if player == 'evin':
       msg = '"Gone too soon, pour one out for the lad."'
     if player == 'takrend':
-      msg = '"Never see him around. Still my favorite."'
+      msg = '"I guess it\'s fitting that he\'s back on a boat now, huh? I\'ll miss the guy."'
     if player == 'wil' or player == 'wilavor' or player == 'halves':
       msg = '"Kid sure knows how to drum up a crowd. Get it? Because he\'s got that fancy drum?"'
     if player == 'agamemnon' or player == 'fireheart':
@@ -195,15 +195,17 @@ async def on_message(message):
     if player == 'moryn' or player == 'dwarf':
       msg = '"Glad he made it back alright. He reminds me of my dad. But less grumpy."'
     if player == 'cassandra' or player == 'cass':
-      msg = '"She\'s a lot nicer than I gave her credit for. Seems to really care about the tiefling girl too."'
+      msg = '"She\'s got quite the temper these days, doesn\'t she? Can\'t really say I blame her, though. Still, what\'s up with her eye? That\'s weird."'
     if player == 'crimson' or player == 'firesoul':
-      msg = '"She hasn\'t gotten any less abrasive, huh? Must be a druid thing."'
+      msg = '"Has anyone seen her around lately? I hope she\'s alright."'
     if player == 'aban' or player == 'slit-eyes':
       msg = '<:4ban:550062949603999981>'
     if player == 'antaeus' or player == 'goldy':
       msg = '"The new king of baller moves. 100% badass, even if he can\'t read."'
     if player == 'dendro' or player == 'milkdrinker':
-      msg = '"Kid\'s walking around with some fancy gear now, isn\'t he? Got some fancy runes on that there sword. Wonder what they say."'
+      msg = '"Good to see him going out again, he spent a while just sitting around the tavern, huh?"'
+    if player == 'grixie' or player == 'barabbas':
+      msg = '"Wow, he certainly has the face of a young man, doesn\'t he?"'
     if player == 'isla':
       msg = '"She puts up with way more shit than I would if I ran this place."'
     if player == 'xarthisius':

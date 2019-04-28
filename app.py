@@ -37,65 +37,65 @@ async def on_message(message):
 
   if '<@!185462125940965376>' in message.content:
     msg = '"Motherfucker."'
-    await client.send_message(message.channel, msg)
+    await message.channel.send(msg)
       
   if message.content.lower().startswith('hey sam can '):
     msg = '"No."'
     if random.randint(1, 100) == 1 or str(message.author) == 'SquigBoss#1353':
       msg = '"Eh, sure. Why not?"'
-    await client.send_message(message.channel, msg)
+    await message.channel.send(msg)
       
   if message.content.lower().startswith('hey will should '):
     msg = '"Do it."'
     if random.randint(1, 100) == 1:
       msg = 'http://gph.is/2efKpdD'
-    await client.send_message(message.channel, msg)
+    await message.channel.send(msg)
 
   if message.content.lower().startswith('hey kay will that joke ever not be funny'):
     msg = '"Nope, it\'s hilarious."'
     if str(message.author) == 'MouseEXE#8367':
       msg = '"It was never funny."'
-    await client.send_message(message.channel, msg)
+    await message.channel.send(msg)
   
   if 'RIP' in message.content:
-    respects = get(client.get_all_emojis(), name='payrespects')
+    respects = get(client.emojis(), name='payrespects')
     #msg = '<:payrespects:502292405152645122>'
-    await client.add_reaction(message, respects)
+    await message.add_reaction(respects)
   
   if 'pour one out' in message.content.lower():
     if str(message.author) == 'Hitwave#9901':
-      await client.add_reaction(message, '🥛')
+      await message.add_reaction('🥛')
     else:
-      await client.add_reaction(message, '🍺')
-    await client.add_reaction(message, '⤵')
+      await message.add_reaction('🍺')
+    await message.add_reaction('⤵')
 
   if getCommand(message) == trgThrok:
     msg = '<:throkflex:486598697228959760>'
-    await client.send_message(message.channel, msg)
+    await message.channel.send(msg)
       
   if getCommand(message) == trgInspiration:
     msg = '<:milano:542939947544346644>'
-    await client.send_message(message.channel, msg)
+    await message.channel.send(msg)
 
   if str(message.author) == 'Will G.#6807' and random.randint(1, 96) == 1:
-    kick = get(client.get_all_emojis(), name='wulfkick')
-    await client.add_reaction(message, kick)
+    kick = get(client.emojis(), name='wulfkick')
+    await message.add_reaction(kick)
 
   
   if 'good bot' in message.content.lower():
-    await client.add_reaction(message, '🇹')
-    await client.add_reaction(message, '🇭')
-    await client.add_reaction(message, '🇦')
-    await client.add_reaction(message, '🇳')
-    await client.add_reaction(message, '🇰')
-    await client.add_reaction(message, '🇸')
+    await message.add_reaction('🇹')
+    await message.add_reaction('🇭')
+    await message.add_reaction('🇦')
+    await message.add_reaction('🇳')
+    await message.add_reaction('🇰')
+    await message.add_reaction('🇸')
     #msg = '"Thanks!"'
-    #await client.send_message(message.channel, msg)
+    #await message.channel.send(msg)
 
   if 'bad bot' in message.content.lower():
-    await client.add_reaction(message, '🖕')
+    await message.add_reaction('🖕')
     #msg = '"Fuck you."'
-    #await client.send_message(message.channel, msg)
+    #await message.channel.send(msg)
 
   if getCommand(message) == trgRoll:
     cleanmsg = cleanMessage(message, trgRoll).replace('-', '+-')
@@ -153,7 +153,7 @@ async def on_message(message):
       msg = '"Way to minmax your rolls, you got a ' + str(total) + '!"' + breakdown
     else:
       msg = getRollMsg(total) + str(total) + '!"' + breakdown
-    await client.send_message(message.channel, msg)
+    await message.channel.send(msg)
 
   if getCommand(message) == trgDescribe:
     player = cleanMessage(message, trgDescribe)
@@ -275,7 +275,7 @@ async def on_message(message):
     if player == 'vabalar':
       msg = '"Never met a ' + getFirbolg()  + ', maybe you\'re imagining things?"'
         
-    await client.send_message(message.channel, msg)
+    await message.channel.send(msg)
 
   if message.content.startswith('!help'):
     msg = """To ask the Old Gambler to roll you a die (or multiple dice!) simply type '!roll', followed by your roll query.
@@ -283,11 +283,11 @@ async def on_message(message):
     \nFor example, you can use 1d20 or 42d69 to roll a single 20 sided die, or 42 69 sided dice.
     \nYou can chain these queries together with a '+'.
     \nFor example, you can say '!roll 1d420 + 1d69 + 42069'"""
-    await client.send_message(message.channel, msg)
+    await message.channel.send(msg)
       
   if message.content == '!stat':
     msg = rollOneStat()
-    await client.send_message(message.channel, msg)
+    await message.channel.send(msg)
       
   if message.content == '!statblock':
     msg = '['
@@ -296,7 +296,7 @@ async def on_message(message):
       if i < 5:
         msg += ', '
     msg += ']'
-    await client.send_message(message.channel, msg)
+    await message.channel.send(msg)
 
 def cleanMessage(message, command):
   if message.content.startswith((cmdMark, cmdSlash)):

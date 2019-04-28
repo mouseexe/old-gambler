@@ -58,7 +58,7 @@ async def on_message(message):
     await message.channel.send(msg)
   
   if 'RIP' in message.content:
-    respects = get(client.emojis(), name='payrespects')
+    respects = get(client.emojis, name='payrespects')
     #msg = '<:payrespects:502292405152645122>'
     await message.add_reaction(respects)
   
@@ -78,7 +78,7 @@ async def on_message(message):
     await message.channel.send(msg)
 
   if str(message.author) == 'Will G.#6807' and random.randint(1, 96) == 1:
-    kick = get(client.emojis(), name='wulfkick')
+    kick = get(client.emojis, name='wulfkick')
     await message.add_reaction(kick)
 
   

@@ -159,7 +159,7 @@ async def on_message(message):
     player = cleanMessage(message, trgDescribe)
     msg = getUnexpected()
     if player == 'rayne' or player == 'scaley':
-      msg = '"Nerd."'
+      msg = '"Did they just up and leave? Eh, who cares?"'
     if player == 'wivaun' or player == 'wiv':
       msg = '"He was a good soul. Not sure what it was that messed him up like that, but I hope things get better."'
     if player == 'khyrim':
@@ -195,7 +195,7 @@ async def on_message(message):
     if player == 'moryn' or player == 'dwarf':
       msg = '"Glad he made it back alright. He reminds me of my dad. But less grumpy."'
     if player == 'cassandra' or player == 'cass':
-      msg = '"She\'s got quite the temper these days, doesn\'t she? Can\'t really say I blame her, though. Still, what\'s up with her eye? That\'s weird."'
+      msg = '"Sad to see her go. She\'ll kill it out in the Steppes though."'
     if player == 'crimson' or player == 'firesoul':
       msg = '"Has anyone seen her around lately? I hope she\'s alright."'
     if player == 'aban' or player == 'slit-eyes':

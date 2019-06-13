@@ -122,8 +122,7 @@ async def on_message(message):
             minRoll = True
           elif r == 20:
             maxRoll = True
-          else:
-            writeup = '(' + str(r) + ')'
+          writeup = '(' + str(r) + ')'
           if isAdvantage(cleanmsg):
             if r > total:
               total = r

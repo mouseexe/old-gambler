@@ -100,7 +100,7 @@ async def on_message(message):
     #await message.channel.send(msg)
 
   if getCommand(message) == trgBCN:
-    cleanmsg = cleanMessage(message, trgRoll).replace('-', '+-')
+    cleanmsg = cleanMessage(message, trgBCN).replace('-', '+-')
     dice = cleanmsg.split('+')
     total = 0
     breakdown = ' ['
@@ -237,7 +237,7 @@ def getRollMsg(roll):
   if r == 0:
     return '"I have rolled, and the result is' + getAn(roll)
   elif r == 1:
-    return '"My processors report a result of ' + roll
+    return '"My processors report a result of ' + str(roll)
   elif r == 2:
     return '"It appears I rolled' + getAn(roll)
   else:

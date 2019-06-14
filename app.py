@@ -186,8 +186,10 @@ async def on_message(message):
       msg = '"Although I have never met the individual, I have heard tales of his great deeds."'
     if player == 'seeker':
       msg = '"Of course I know him. He\'s me."'
-    if player == 'keeper':
+    if player == 'keeper' or player == 'gambler' or player == 'olden':
       msg = '"Now that\'s a name I haven\'t heard in a long time."'
+    if player == 'tweaker':
+      msg = '"Get that vermin out of my random access memory."'
     await message.channel.send(msg)
 
   if message.content.startswith('!help'):

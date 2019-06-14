@@ -14,6 +14,7 @@ cmdGambler = 'hey gambler, '
 cmdGambler = 'hey seeker, '
 trgLog = 'log'
 trgRoll = 'roll'
+trgBCN = 'blood'
 trgDescribe = 'describe'
 trgInspiration = 'inspiration'
 trgThrok = 'throk'
@@ -98,6 +99,34 @@ async def on_message(message):
     #msg = '"Fuck you."'
     #await message.channel.send(msg)
 
+  if getCommand(message) == trgBCN:
+    cleanmsg = cleanMessage(message, trgRoll).replace('-', '+-')
+    dice = cleanmsg.split('+')
+    total = 0
+    breakdown = ' ['
+    for die in dice:
+      die = die.strip()
+      didx = die.find('d')
+      if die.startswith('d'):
+        numDice = 1
+      else:
+        numDice = int(die[0:didx])
+      sides = int(die[didx+1:])
+      for idx in range(numDice):
+        r = random.randint(1, sides)
+        if r >= 4:
+          writeup = '*' + str(r) + '*'
+          total += 1
+        else:
+          writeup = '~~' + str(r) + '~~'
+        writeup += ' + '
+        breakdown += writeup
+    breakdown = breakdown[:len(breakdown) - 3]
+    breakdown += ']'
+    msg = getRollMsg(total) + str(total) + '!"' + breakdown
+    await message.channel.send(msg)
+
+
   if getCommand(message) == trgRoll:
     cleanmsg = cleanMessage(message, trgRoll).replace('-', '+-')
     dice = cleanmsg.split('+')
@@ -155,6 +184,10 @@ async def on_message(message):
     msg = getUnexpected()
     if player == 'throk':
       msg = '"Although I have never met the individual, I have heard tales of his great deeds."'
+    if player == 'seeker':
+      msg = '"Of course I know him. He\'s me."'
+    if player == 'keeper':
+      msg = '"Now that\'s a name I haven\'t heard in a long time."'
     await message.channel.send(msg)
 
   if message.content.startswith('!help'):
@@ -200,7 +233,15 @@ def getUnexpected():
   return '"My apologies. I don\'t believe I\'ve met the individual you\'re referring to."'
 
 def getRollMsg(roll):
-  return '"I have rolled, and the result is' + getAn(roll)
+  r = random.randint(0, 3)
+  if r == 0:
+    return '"I have rolled, and the result is' + getAn(roll)
+  elif r == 1:
+    return '"My processors report a result of ' + roll
+  elif r == 2:
+    return '"It appears I rolled' + getAn(roll)
+  else:
+    return '"The routine finished executing. I rolled' + getAn(roll)
 
 def getAn(roll):
   if roll == 8 or roll == 11 or roll == 18:

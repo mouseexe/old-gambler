@@ -237,7 +237,7 @@ def getRollMsg(roll):
   if r == 0:
     return '"I have rolled, and the result is' + getAn(roll)
   elif r == 1:
-    return '"My processors report a result of ' + str(roll)
+    return '"My processors report a result of '
   elif r == 2:
     return '"It appears I rolled' + getAn(roll)
   else:

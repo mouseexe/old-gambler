@@ -30,6 +30,14 @@ def getCommand(message):
 
 @client.event
 async def on_message(message):
+  # nice
+  if '69' in message.content:
+    await message.add_reaction('🇳')
+    await message.add_reaction('🇮')
+    await message.add_reaction('🇨')
+    await message.add_reaction('🇪')
+    await message.add_reaction('👌')
+    
   # we do not want the bot to reply to itself
   if message.author == client.user:
     return

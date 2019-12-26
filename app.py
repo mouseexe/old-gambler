@@ -87,10 +87,13 @@ async def on_message(message):
     msg = '<:milano:542939947544346644>'
     await message.channel.send(msg)
 
-  if str(message.author) == 'Will G.#6807' and random.randint(1, 96) == 1:
+  if str(message.author) == 'Will G.#6807' and random.randint(1, 1000) == 1:
     kick = get(client.emojis, name='wulfkick')
     await message.add_reaction(kick)
 
+  if 'puzzle' in message.content.lower():
+    msg = 'Puzzle!'
+    await message.channel.send(msg)
   
   if 'good bot' in message.content.lower():
     await message.add_reaction('🇹')

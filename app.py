@@ -32,7 +32,7 @@ def getCommand(message):
 @client.event
 async def on_message(message):
   # nice
-  niceRegex = re.compile(r"(\D|\b)(69)*(\D|\b)")
+  niceRegex = re.compile(r"(\D|\b)(420|69)*(\D|\b)")
   if re.search(niceRegex, message.content) != None:
 #if '69' in message.content:
     await message.add_reaction('🇳')

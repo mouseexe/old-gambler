@@ -1,6 +1,7 @@
 import discord
 import random
 import os
+import re
 from discord.utils import get
 
 #No token for you
@@ -31,7 +32,9 @@ def getCommand(message):
 @client.event
 async def on_message(message):
   # nice
-  if '69' in message.content:
+  niceRegex = re.compile(r"(\D|\b)69(\D|\b)")
+  if re.search(niceRegex, message.content) != None:
+#if '69' in message.content:
     await message.add_reaction('🇳')
     await message.add_reaction('🇮')
     await message.add_reaction('🇨')
@@ -71,7 +74,6 @@ async def on_message(message):
   
   if 'RIP' in message.content:
     respects = get(client.emojis, name='payrespects')
-    #msg = '<:payrespects:502292405152645122>'
     await message.add_reaction(respects)
   
   if 'pour one out' in message.content.lower():
@@ -89,9 +91,9 @@ async def on_message(message):
     msg = '<:milano:542939947544346644>'
     await message.channel.send(msg)
 
-  if str(message.author) == 'Will G.#6807' and random.randint(1, 1000) == 1:
-    kick = get(client.emojis, name='wulfkick')
-    await message.add_reaction(kick)
+  if str(message.author) == 'Will G.#6807' and random.randint(1, 10000) == 1:
+    wut = get(client.emojis, name='wutaeus')
+    await message.add_reaction(wut)
 
   if 'puzzle' in message.content.lower():
     msg = 'Puzzle!'
@@ -104,13 +106,9 @@ async def on_message(message):
     await message.add_reaction('🇳')
     await message.add_reaction('🇰')
     await message.add_reaction('🇸')
-    #msg = '"Thanks!"'
-    #await message.channel.send(msg)
 
   if 'bad bot' in message.content.lower():
     await message.add_reaction('🖕')
-    #msg = '"Fuck you."'
-    #await message.channel.send(msg)
 
   if getCommand(message) == trgBCN:
     cleanmsg = cleanMessage(message, trgBCN).replace('-', '+-')

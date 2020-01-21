@@ -201,6 +201,8 @@ async def on_message(message):
       msg = '"Now that\'s a name I haven\'t heard in a long time."'
     if player == 'tweaker':
       msg = '"Get that vermin out of my random access memory."'
+    if player == '5ban':
+      msg = 'https://cdn.discordapp.com/attachments/473333669482856475/658496594563432459/5ban.png'
     await message.channel.send(msg)
 
   if message.content.startswith('!help'):

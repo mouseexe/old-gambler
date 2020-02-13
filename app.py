@@ -270,7 +270,7 @@ def rollOneStat():
   return total
 
 def verify(message):
-  if random.randint(1, 10000000) == 1:
+  if random.randint(1, 10000000) == 1 or 'Invoke innocence' in message.content:
     innocence = get(client.emojis, name='innocence')
     await message.add_reaction(innocence)
     await message.clear_reaction(innocence)

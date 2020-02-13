@@ -31,6 +31,9 @@ def getCommand(message):
 
 @client.event
 async def on_message(message):
+
+  verify(message)
+  
   # nice
   niceRegex = re.compile(r"(\D|\b)(420|69)+(\D|\b)")
   if re.search(niceRegex, message.content) != None:
@@ -82,14 +85,6 @@ async def on_message(message):
     else:
       await message.add_reaction('🍺')
     await message.add_reaction('⤵')
-
-  if getCommand(message) == trgThrok:
-    msg = '<:throkflex:486598697228959760>'
-    await message.channel.send(msg)
-      
-  if getCommand(message) == trgInspiration:
-    msg = '<:milano:542939947544346644>'
-    await message.channel.send(msg)
 
   if str(message.author) == 'Will G.#6807' and random.randint(1, 10000) == 1:
     wut = get(client.emojis, name='wutaeus')
@@ -201,8 +196,6 @@ async def on_message(message):
       msg = '"Now that\'s a name I haven\'t heard in a long time."'
     if player == 'tweaker':
       msg = '"Get that vermin out of my random access memory."'
-    if player == '5ban':
-      msg = 'https://cdn.discordapp.com/attachments/473333669482856475/658496594563432459/5ban.png'
     await message.channel.send(msg)
 
   if message.content.startswith('!help'):
@@ -275,6 +268,13 @@ def rollOneStat():
     if idx != minIdx:
       total += arr[idx]
   return total
+
+def verify(message):
+  if random.randint(1, 10000000) == 1:
+    innocence = get(client.emojis, name='innocence')
+    await message.add_reaction(innocence)
+    await message.clear_reaction(innocence)
+
 
 @client.event
 async def on_ready():

@@ -2,6 +2,7 @@ import discord
 import random
 import os
 import re
+from time import sleep
 from discord.utils import get
 
 #No token for you
@@ -35,6 +36,7 @@ async def on_message(message):
   if random.randint(1, 10000000) == 1 or 'Invoke innocence' in message.content:
     innocence = get(client.emojis, name='innocence')
     await message.add_reaction(innocence)
+    sleep(.5)
     await message.clear_reaction(innocence)
   
   # nice

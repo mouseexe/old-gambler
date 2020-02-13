@@ -32,7 +32,10 @@ def getCommand(message):
 @client.event
 async def on_message(message):
 
-  verify(message)
+  if random.randint(1, 10000000) == 1 or 'Invoke innocence' in message.content:
+    innocence = get(client.emojis, name='innocence')
+    await message.add_reaction(innocence)
+    await message.clear_reaction(innocence)
   
   # nice
   niceRegex = re.compile(r"(\D|\b)(420|69)+(\D|\b)")
@@ -268,13 +271,6 @@ def rollOneStat():
     if idx != minIdx:
       total += arr[idx]
   return total
-
-def verify(message):
-  if random.randint(1, 10000000) == 1 or 'Invoke innocence' in message.content:
-    innocence = get(client.emojis, name='innocence')
-    await message.add_reaction(innocence)
-    await message.clear_reaction(innocence)
-
 
 @client.event
 async def on_ready():

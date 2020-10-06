@@ -114,8 +114,6 @@ async def on_message(message):
     
   if 'halloween' in message.content.lower():
     msg = '"It\'s time to get spooky!"'
-    spookywait = random.randint(60, 300)
-    sleep(spookywait)
     await message.channel.send(msg)
 
   if getCommand(message) == trgBCN:

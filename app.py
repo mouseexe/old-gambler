@@ -110,7 +110,7 @@ async def on_message(message):
   if 'spooky ghost' in message.content.lower():
     await message.add_reaction('🇧')
     await message.add_reaction('🇴')
-    await message.add_reaction('🇴')
+    await message.add_reaction('🅾')
     
   if 'halloween' in message.content.lower():
     msg = '"It\'s time to get spooky!"'

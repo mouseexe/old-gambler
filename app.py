@@ -5,7 +5,7 @@ import re
 from time import sleep
 from discord.utils import get
 
-#No token for you
+# No token for you
 TOKEN = os.environ.get('DISCORDTOKEN', 'default value')
 
 client = discord.Client()
@@ -42,7 +42,7 @@ async def on_message(message):
   # nice
   niceRegex = re.compile(r"(\D|\b)(420|69)+(\D|\b)")
   if re.search(niceRegex, message.content) != None:
-#if '69' in message.content:
+  # if '69' in message.content:
     await message.add_reaction('🇳')
     await message.add_reaction('🇮')
     await message.add_reaction('🇨')
@@ -51,8 +51,6 @@ async def on_message(message):
     
   # we do not want the bot to reply to itself
   if message.author == client.user:
-    if 'Puzzle!' in message.content:
-      await message.add_reaction('☝️')
     return
 
   if getCommand(message) == trgLog:
@@ -96,10 +94,9 @@ async def on_message(message):
     await message.add_reaction(wut)
 
   if 'puzzle' in message.content.lower():
-    msg = 'Puzzle!'
-    await message.channel.send(msg)
+    await message.add_reaction('☝️')
   
-  if 'good bot' in message.content.lower():
+  if 'good ghost' in message.content.lower():
     await message.add_reaction('🇹')
     await message.add_reaction('🇭')
     await message.add_reaction('🇦')
@@ -107,8 +104,19 @@ async def on_message(message):
     await message.add_reaction('🇰')
     await message.add_reaction('🇸')
 
-  if 'bad bot' in message.content.lower():
+  if 'bad ghost' in message.content.lower():
     await message.add_reaction('🖕')
+    
+  if 'spooky ghost' in message.content.lower():
+    await message.add_reaction('🇧')
+    await message.add_reaction('🇴')
+    await message.add_reaction('🇴')
+    
+  if 'halloween' in message.content.lower():
+    msg = '"It\'s time to get spooky!"'
+    spookywait = random.randint(60, 300)
+    sleep(spookywait)
+    await message.channel.send(msg)
 
   if getCommand(message) == trgBCN:
     cleanmsg = cleanMessage(message, trgBCN).replace('-', '+-')
@@ -246,13 +254,15 @@ def getUnexpected():
   return '"My apologies. I don\'t believe I\'ve met the individual you\'re referring to."'
 
 def getRollMsg(roll):
-  r = random.randint(0, 3)
+  r = random.randint(0, 4)
   if r == 0:
     return '"I have rolled, and the result is' + getAn(roll)
   elif r == 1:
     return '"My processors report a result of '
   elif r == 2:
     return '"It appears I rolled' + getAn(roll)
+  elif r == 3:
+    return '"BEEP BOOP: RESULT: '
   else:
     return '"The routine finished executing. I rolled' + getAn(roll)
 

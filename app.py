@@ -95,6 +95,9 @@ async def on_message(message):
 
   if 'puzzle' in message.content.lower():
     await message.add_reaction('☝️')
+   
+  if 'trans' in message.content.lower():
+    await message.add_reaction('🏳️‍⚧️')
   
   if 'good ghost' in message.content.lower():
     await message.add_reaction('🇹')

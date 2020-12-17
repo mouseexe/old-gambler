@@ -99,7 +99,7 @@ async def on_message(message):
   if 'trans' in message.content.lower():
     await message.add_reaction('🏳️‍⚧️')
   
-  if 'good ghost' in message.content.lower():
+  if 'good bot' in message.content.lower():
     await message.add_reaction('🇹')
     await message.add_reaction('🇭')
     await message.add_reaction('🇦')
@@ -107,17 +107,8 @@ async def on_message(message):
     await message.add_reaction('🇰')
     await message.add_reaction('🇸')
 
-  if 'bad ghost' in message.content.lower():
+  if 'bad bot' in message.content.lower():
     await message.add_reaction('🖕')
-    
-  if 'spooky ghost' in message.content.lower():
-    await message.add_reaction('🇧')
-    await message.add_reaction('🇴')
-    await message.add_reaction('🅾')
-    
-  if 'halloween' in message.content.lower():
-    msg = '"It\'s time to get spooky!"'
-    await message.channel.send(msg)
 
   if getCommand(message) == trgBCN:
     cleanmsg = cleanMessage(message, trgBCN).replace('-', '+-')
